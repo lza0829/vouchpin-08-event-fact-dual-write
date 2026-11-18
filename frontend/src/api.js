@@ -20,8 +20,14 @@ export const api = {
   addEvent: (body) => req('/events', { method: 'POST', body: JSON.stringify(body) }),
   facts: (day) => req('/facts' + (day ? `?business_day=${encodeURIComponent(day)}` : '')),
   preview: (day) => req('/redeem/preview' + (day ? `?business_day=${encodeURIComponent(day)}` : '')),
+  flush: (body) => req('/redeem/flush', { method: 'POST', body: JSON.stringify(body || {}) }),
   seal: (body) => req('/redeem/seal', { method: 'POST', body: JSON.stringify(body) }),
   batches: () => req('/batches'),
   getDay: () => req('/settings/day'),
   setDay: (business_day) => req('/settings/day', { method: 'PUT', body: JSON.stringify({ business_day }) }),
+  getVisibility: () => req('/settings/visibility'),
+  setVisibility: (redeem_visibility_mode) =>
+    req('/settings/visibility', { method: 'PUT', body: JSON.stringify({ redeem_visibility_mode }) }),
+  getFaults: () => req('/debug/faults'),
+  setFault: (body) => req('/debug/faults', { method: 'PUT', body: JSON.stringify(body) }),
 }

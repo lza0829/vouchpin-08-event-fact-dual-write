@@ -93,6 +93,10 @@ a { color: inherit; text-decoration: none; }
   font-size: 1.35rem; color: var(--navy); letter-spacing: -0.02em;
 }
 .stat .v.ticket { color: var(--ticket); }
+.stat .v.warn-ink { color: var(--bad); }
+.sub-head { margin: 0 0 0.6rem; font-size: 1rem; color: var(--navy); }
+.mode-badge { padding: 0.4rem 0.6rem; border-radius: 0.5rem; background: rgba(36, 56, 100, 0.06); }
+.err-cell { color: var(--bad); font-size: 0.82rem; max-width: 18rem; }
 
 table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
 th, td { text-align: left; padding: 0.55rem 0.35rem; border-bottom: 1px solid var(--line); }
@@ -124,6 +128,7 @@ button.ghost {
 }
 .tag.ok { background: rgba(47, 143, 107, 0.12); color: var(--ok); }
 .tag.warn { background: rgba(196, 59, 122, 0.12); color: var(--ticket); }
+.tag.bad { background: rgba(196, 92, 92, 0.14); color: var(--bad); }
 
 @media (max-width: 720px) {
   .chip { min-width: 0; flex: 1 1 40%; border-radius: 0.75rem; }

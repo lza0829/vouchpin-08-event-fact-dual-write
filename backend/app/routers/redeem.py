@@ -16,6 +16,11 @@ def preview(business_day: str | None = Query(None)):
     return svc.preview(business_day)
 
 
+@router.post("/redeem/flush")
+def flush(body: dict[str, Any] | None = None):
+    return svc.flush(body or {})
+
+
 @router.post("/redeem/seal")
 def seal(body: dict[str, Any]):
     return svc.seal(body)
